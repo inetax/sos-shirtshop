@@ -1,11 +1,13 @@
 {* smarty *}
 {config_load file='site.conf' }
+{load_presentation_object filename="store_front" assign="obj"}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
  "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
    <title>{#site_title#}</title>
-   <link rel="stylesheet" href="styles/tshirtshop.css" type="text/css">
+   <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+   <link rel="stylesheet" href="{$obj->mSiteUrl}styles/tshirtshop.css" type="text/css">
 </head>
 <body>
 <div id="doc" class="yui-t2">
@@ -14,8 +16,8 @@
 	<div id="yui-main">
 	<div class="yui-b"><div class="yui-g">
 	<!-- YOUR DATA GOES HERE -->
-	<a href="index.php">
-		<img src="images/tshirtshop.png" alt="tshirtshop logo" />
+	<a href="{$obj->mSiteUrl}">
+		<img src="{$obj->mSiteUrl}images/tshirtshop.png" alt="tshirtshop logo" />
 	</a>
 	</div>
 <div class="yui-g">
@@ -24,7 +26,7 @@
 	</div>
 </div>
 	</div>
-	<div class="yui-b"><!-- YOUR NAVIGATION GOES HERE -->Place list of departments here</div>
+	<div class="yui-b">{include file='departments_list.tpl' }</div>
 	
 	</div>
    <div id="ft" role="contentinfo"><p>Footer</p></div>
