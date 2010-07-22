@@ -47,5 +47,9 @@ define('HTTP_SERVER_PORT', '80');
   '/tshirtshop/' if the site runs at http://www.example.com/tshirtshop/
   '/' if the site runas at http://www.example.com */
 define('VIRTUAL_LOCATION', '/');
- 
+
+// Configure product lists display options
+define('SHORT_PRODUCT_DESCRIPTION_LENGTH', 150);
+define('PRODUCTS_PER_PAGE',4);
+
 ?> 

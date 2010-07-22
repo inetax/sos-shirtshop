@@ -103,6 +103,40 @@ class DatabaseHandler
 		return $result;
 	}
 	
+ // Wrapper method for PDOStatement::fetch()
+  public static function GetRow($sqlQuery, $params = null,
+                                $fetchStyle = PDO::FETCH_ASSOC)
+  {
+    // Initialize the return value to null
+    $result = null;
+
+    // Try to execute an SQL query or a stored procedure
+    try
+    {
+      // Get the database handler
+      $database_handler = self::GetHandler();
+
+      // Prepare the query for execution
+      $statement_handler = $database_handler->prepare($sqlQuery);
+
+      // Execute the query
+      $statement_handler->execute($params);
+
+      // Fetch result
+      $result = $statement_handler->fetch($fetchStyle);
+    }
+    // Trigger an error if an exception was thrown when executing the SQL query
+    catch(PDOException $e)
+    {
+      // Close the database handler and trigger an error
+      self::Close();
+      trigger_error($e->getMessage(), E_USER_ERROR);
+    }
+
+    // Return the query results
+    return $result;
+  }
+	
 	// Return the first column value from a row
 	public static function GetOne($sqlQuery, $params = null)
 	{

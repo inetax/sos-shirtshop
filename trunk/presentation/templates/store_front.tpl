@@ -22,7 +22,7 @@
 	</div>
 <div class="yui-g">
 	<!-- YOUR DATA GOES HERE -->
-	Place content here
+	{include file=$obj->mContentsCell}
 	</div>
 </div>
 	</div>
