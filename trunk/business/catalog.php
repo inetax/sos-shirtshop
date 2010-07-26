@@ -29,6 +29,9 @@ class Catalog
 	public static function GetCategoriesInDepartment($departmentId)
 	{
 		// Build SQL query
+		$sql = 'CALL catalog_get_categories_list(:department_id)';
+		
+		// Build the parameters array
 		$params = array (':department_id' => $departmentId);
 		
 		// Execute the query and return the results
@@ -112,7 +115,7 @@ class Catalog
 	}
 	
 	// Retrieves the list of products for the department page
-	public static function GetProductOnDepartment(
+	public static function GetProductsOnDepartment(
 								$departmentId, $pageNo, &$HowManyPages)
 	{
 		// Query that returns the number of products in the department page
@@ -133,10 +136,10 @@ class Catalog
 		// Build the parameters array
 		$params = array (
 			':department_id' => $departmentId,
-			'short_product_description_length' =>
+			':short_product_description_length' =>
 			SHORT_PRODUCT_DESCRIPTION_LENGTH,
 			':products_per_page' => PRODUCTS_PER_PAGE,
-			'start_item' => $start_item);
+			':start_item' => $start_item);
 
 		// Execute the query and return the results
 		return DatabaseHandler::GetAll($sql, $params);
@@ -173,7 +176,7 @@ class Catalog
 	// Retrieves complete product details
 	public static function GetProductDetails($productId)
 	{
-		//Build SQL query
+		// Build SQL query
 		$sql = 'CALL catalog_get_product_details(:product_id)';
 		
 		// Build the parameters array

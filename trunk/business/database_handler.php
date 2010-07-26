@@ -65,7 +65,7 @@ class DatabaseHandler
 		catch(PDOException $e)
 		{
 			// Close the database handler and trigger an error
-			self::Closer();
+			self::Close();
 			trigger_error($e->getMessage(), E_USER_ERROR);
 		}
 	}
@@ -86,7 +86,7 @@ class DatabaseHandler
 			// Prepare the query for execution
 			$statement_handler = $database_handler->prepare($sqlQuery);
 			
-			// Exeecute the query
+			// Execute the query
 			$statement_handler->execute($params);
 			
 			// Fetch result
