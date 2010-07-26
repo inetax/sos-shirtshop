@@ -26,8 +26,8 @@
 	</div>
 </div>
 	</div>
-	<div class="yui-b">{include file='departments_list.tpl' }</div>
-	
+	<div class="yui-b">{include file='departments_list.tpl' }
+	{include file=$obj->mCategoriesCell}
 	</div>
    <div id="ft" role="contentinfo"><p>Footer</p></div>
 </div>
