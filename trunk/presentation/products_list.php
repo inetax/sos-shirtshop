@@ -3,9 +3,9 @@ class ProductsList
 {
 	// Public variables to be read from Smarty template
 	public $mPage = 1;
-	public $mrTotaPages;
+	public $mrTotalPages;
 	public $mLinkToNextPage;
-	public $mLinktoPreviousPage;
+	public $mLinkToPreviousPage;
 	public $mProducts;
 	
 	// Private members
@@ -29,6 +29,9 @@ class ProductsList
 			
 		if ($this->mPage < 1)
 			trigger_error('Incorrect Page value');
+			
+		// Save page request for continue shopping functionality
+		$_SESSION['link_to_continue_shopping'] = $_SERVER['QUERY_STRING'];
 	}
 	
  public function init()

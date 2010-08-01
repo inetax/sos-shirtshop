@@ -3,11 +3,11 @@ class StoreFront
 {
 	public $mSiteUrl;
 	// Define the template file for the page contents
-	public $mContentsCell = 'blank.tpl';
+	public $mContentsCell = 'first_page_contents.tpl';
 	// Define the template file for the categories cell
 	public $mCategoriesCell = 'blank.tpl';
 	
-	// Class constructor;
+	// Class constructor
 	public function __construct()
 	{
 		$this->mSiteUrl = Link::Build('');
@@ -22,6 +22,17 @@ class StoreFront
 			$this->mContentsCell = 'department.tpl';
 			$this->mCategoriesCell = 'categories_list.tpl';
 		}
+		elseif (isset($_GET['ProductId']) &&
+				isset ($_SESSION['link_to_continue_shopping']) &&
+				strpos($_SESSION['link_to_continue_shopping'], 'DepartmentId', 0)
+				!== false)
+		{
+			$this->mCategoriesCell = 'categories_list.tpl';
+		}
+		
+		// Load product details page if visiting a product
+		if (isset ($_GET['ProductId']))
+			$this->mContentsCell = 'product.tpl';
 	}
 }
 ?>
