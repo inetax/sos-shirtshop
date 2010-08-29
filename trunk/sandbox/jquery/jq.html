@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="Studio 3 http://aptana.com/">
+	<meta name="author" content="Sid">
+	<!-- Date: 2010-08-20 -->
+	<script src="jquery-1.4.2.js" type = 'text/javascript'></script>
+	<script type = "text/javascript">
+    // Define the entry point    
+     $(document).ready(function(){
+     // The DOM (document object model) is constructed
+     // We will initialize and run our plugin here
+   $("a").click(function(event){
+       event.preventDefault();
+       $(this).hide("slow");
+    });
+   
+   //Code for example B
+  $("input.buttonBslidedown").click(function(){ 
+    $("div.inHere").find("a.jq:hidden").slideDown("slow"); 
+  });
+  
+  $("input.buttonBslideup").click(function(){ 
+    $("div.inHere").find("a.jq:visible").slideUp("slow"); 
+  });
+  
+  $("input.buttonCAdd").click(function(){
+  $("div.contentToChange p:not(.alert)")
+   .append("<strong class='addedtext'>&nbsp;This text was just appended to this paragraph</strong>");
+});
+  
+  $("input.buttonCRemove").click(function(){
+  $("strong.addedtext").remove();
+  }); 
+   //$("a").addClass("test");
+   //alert("remove");
+//$("a").removeClass("test");
+
+ });
+
+</script>
+ <style type="text/css">
+    a.test { font-weight: bold; }
+    
+    .addedtext{
+color:#FF0000;
+}
+
+ </style>
+
+</head>
+<body>
+  
+  <div class="contentToChange">
+ <a href="http://jquery.com/" class="jq">jQuery</a>
+ <br>
+ <a href="http://msn.com/">MSN</a>
+ <br>
+<input type="button" value="Slide Out" class="buttonBslideup" />
+<input type="button" value="Slide In" class="buttonBslidedown" />
+
+<p><strong>Example C</strong></p>
+<p>Add/Remove text from the end of all &lt;p&gt; elements in column 2 except the paragraph in the red box.</p>
+
+<input type="button" value="Add" class="buttonCAdd" />
+<input type="button" value="Remove" class="buttonCRemove" />
+<a href="#" class="codeButtonC">Show&nbsp;/&nbsp;Hide jquery code</a>
+
+<pre class="codeC">$("div.contentToChange p:not(.alert)")
+  .append("&lt;strong class="addedtext"&gt;&nbsp;This text was just appended to this paragraph&lt;/strong&gt;")});
+$("strong.addedtext").remove();</pre>
+
+<p class="alert">Use the buttons to the left to run jQuery code on the HTML below.</p> 
+
+<p class="firstparagraph">Lorem ipsum <em>dolor</em> sit amet, consectetuer <em>adipiscing</em> elit, sed diam nonummy nibh euismod <em>tincidunt</em> ut laoreet dolore magna aliquam erat <strong>volutpat</strong>. Ut wisi enim ad minim <em>veniam</em>, quis nostrud exerci <strong>tation</strong> ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+
+<p class="secondparagraph">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse <strong>molestie</strong> consequat, vel illum <strong>dolore</strong> eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer <strong>adipiscing</strong> elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+
+<p class="thirdparagraph">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea <em>commodo</em> consequat. Duis autem vel eum iriure dolor in hendrerit in <em>vulputate</em> velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te <strong>feugait</strong> nulla facilisi.</p>
+
+<p class="fourthparagraph">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, <strong>quis</strong> nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+Duis autem vel eum iriure dolor in <em>hendrerit</em> in vulputate velit <em>esse</em> molestie consequat, vel illum dolore eu feugiat nulla <strong>facilisis</strong> at vero eros et accumsan et <em>iusto</em> odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te <strong>feugait</strong> nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh <strong>euismod</strong> tincidunt ut laoreet <em>dolore</em> magna aliquam erat volutpat.</p>
+
+<p class="fifthparagraph">Lorem ipsum <em>dolor</em> sit amet, consectetuer <em>adipiscing</em> elit, sed diam nonummy nibh euismod <em>tincidunt</em> ut laoreet dolore magna aliquam erat <strong>volutpat</strong>. Ut wisi enim ad minim <em>veniam</em>, quis nostrud exerci <strong>tation</strong> ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+
+<p class="sixthparagraph">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse <strong>molestie</strong> consequat, vel illum <strong>dolore</strong> eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer <strong>adipiscing</strong> elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+
+</div>
+</body>
+</html>
