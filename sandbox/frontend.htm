@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Chapter 2 : Rating - Image - One Way</title>
+
+<script type="text/javascript">
+
+ 
+function encodeValue(val)
+{
+ var encodedVal;
+ if (!encodeURIComponent)
+ {
+   encodedVal = escape(val);
+   /* fix the omissions */
+   encodedVal = encodedVal.replace(/@/g, '%40');
+   encodedVal = encodedVal.replace(/\//g, '%2F');
+   encodedVal = encodedVal.replace(/\+/g, '%2B');
+ }
+ else
+ {
+   encodedVal = encodeURIComponent(val);
+   /* fix the omissions */
+   encodedVal = encodedVal.replace(/~/g, '%7E');
+   encodedVal = encodedVal.replace(/!/g, '%21');
+   encodedVal = encodedVal.replace(/\(/g, '%28');
+   encodedVal = encodedVal.replace(/\)/g, '%29');
+   encodedVal = encodedVal.replace(/'/g, '%27');
+ }
+ /* clean up the spaces and return */
+ return encodedVal.replace(/\%20/g,'+'); 
+}    
+ 
+function sendRequest(url,payload)
+{
+    var img = new Image();
+    img.src = url+"?"+payload;
+}
+function rate(rating)
+{     
+  /* string identifying type of example making rating */
+  var transport = "image";
+  /* URL of server-side program to record rating */
+  var url = "http://ajaxref.com/ch2/setrating.php";
+  /* form query string with rating and example id string */
+  var payload = "rating=" + encodeValue(rating);
+  payload += "&transport=" + encodeValue(transport);
+  /* submit rating */
+  sendRequest(url,payload);
+  /* indicate vote was made */
+  var resultDiv = document.getElementById("resultDiv");
+  var ratingForm = document.getElementById("ratingForm");
+  ratingForm.style.display = "none";
+  resultDiv.innerHTML = "Thank you for voting.  You rated this question a " + rating + ".  You can see the ratings in the <a href='http://ajaxref.com/ch2/ratings.txt' target='_blank'>ratings file</a>.";
+ 
+  resultDiv.style.display = "";
+}
+
+</script>
+
+ 
+</head>
+<body>
+<h3>How do you feel about JavaScript?</h3>
+ 
+<form action="#" method="get" id="ratingForm">
+<em>Hate It - </em> [  
+ <input type="radio" name="rating" value="1" onclick="rate(this.value);" /> 1
+ <input type="radio" name="rating" value="2" onclick="rate(this.value);" /> 2
+ <input type="radio" name="rating" value="3" onclick="rate(this.value);" /> 3
+ <input type="radio" name="rating" value="4" onclick="rate(this.value);" /> 4
+ <input type="radio" name="rating" value="5" onclick="rate(this.value);" /> 5
+ ] <em> - Love It</em>
+</form>
+<br />
+ 
+<div style="display:none;" id="resultDiv">&nbsp;</div>
+ 
+</body>
+</html>

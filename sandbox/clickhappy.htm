@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Click Happy</title>
+    <script type="text/javascript">
+      window.onload=function()
+      {
+        var radios = document.getElementsByName("rating");
+        for (var i=0; i <radios.length; i++)
+        {
+          radios[i].onclick = function () {alert(this.value);};
+        }
+      };
+    </script>
+   </head>
+  <body>
+    
+    <form action="#" method="get">
+      <input type="radio" name="rating" value="1">1
+      <input type="radio" name="rating" value="2">2
+      <input type="radio" name="rating" value="3">3
+      <input type="radio" name="rating" value="4">4
+      <input type="radio" name="rating" value="5">5
+    </form>
+  </body>
+</html>
