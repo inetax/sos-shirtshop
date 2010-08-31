@@ -133,5 +133,17 @@ class Cases
     DatabaseHandler::Execute($sql,$params);
   }
   
+// Update VMailMerge
+	public static function UpdateVMailMerge($claimNo)
+	{
+		// Build the SQL Query
+		$sql = 'CALL cases_create_vmailmerge(:ClaimNo)';
+		
+		// Build the parameters array
+		$params = array(':ClaimNo' => $claimNo);
+		// Execute the query
+		DatabaseHandler::Execute($sql,$params);
+	}
+  
 }
 ?>

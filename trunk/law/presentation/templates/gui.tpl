@@ -37,7 +37,7 @@
         </ul>
     </li>
     
-    <li><a href="#">Other</a></li>
+    <li><a href="{$obj->mSiteUrl}?view=UpdatevMailMerge">vMailMerge</a></li>
     <li><a href="#">Help</a></li>
 </ul>
 <p>&nbsp;</p><br/>

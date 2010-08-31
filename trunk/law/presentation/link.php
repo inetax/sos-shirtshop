@@ -61,31 +61,37 @@ class Link
   // Create a Valid Examiner link
   public static function ToValidateExaminer()
   {
-    return self::Build('index.php?view=AddExaminer' );
+    return self::Build('?view=AddExaminer' );
   }
   
 // Create a Successful Add link
   public static function ToAddSuccess()
   {
-    return self::Build('index.php?view=AddSuccess' );
+    return self::Build('?view=AddSuccess' );
   }
 
   // Create a Valid Examiner link
   public static function ToValidateCaseInfo()
   {
-    return self::Build('index.php?view=AddCaseInfo' );
+    return self::Build('?view=AddCaseInfo' );
   }
   
 // Create a Valid Examiner link
   public static function ToValidateLawFirm()
   {
-    return self::Build('index.php?view=AddLawFirm' );
+    return self::Build('?view=AddLawFirm' );
   }
 
 // Create a Valid Examiner link
   public static function ToAssignFirm2Claim()
   {
-    return self::Build('index.php?view=AssignFirm2Claim' );
+    return self::Build('?view=AssignFirm2Claim' );
+  }
+  
+// Create a Valid Examiner link
+  public static function ToUpdatevMailMerge()
+  {
+    return self::Build('?view=UpdatevMailMerge' );
   }
 }
 ?>
