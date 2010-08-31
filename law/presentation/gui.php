@@ -35,6 +35,9 @@ class Gui
     case "AssignFirm2Claim":
         $this->mContentsCell = 'lawfirm2claim_form.tpl';
        break;
+    case "UpdatevMailMerge":
+        $this->mContentsCell = 'vmailmerge_form.tpl';
+       break;
     case "CasesInfo":
         $this->mContentsCell = 'caseinfo_view.tpl';
         break;  
