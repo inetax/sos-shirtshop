@@ -8,42 +8,42 @@
 	<tr>
 		<td>Plaintiff</td>
 		<td><input type ="text" name="plaintiff" >
-		<div class="errorMsg">{$obj->mErrorMessagePT}</td>
+		<div class="errorMsg">{$obj->mErrorMessage.plaintiff}</td>
 	</tr>
 	<tr>
 		<td>Plaintiff (abbrev.)</td>
 		<td><input type ="text" name="plaintiff_ab" >
-		<div class="errorMsg">{$obj->mErrorMessagePTAB}</td>
+		<div class="errorMsg">{$obj->mErrorMessage.plaintiff_ab}</td>
 	</tr>
 	<tr>
 		<td>Defendant</td>
 		<td><input type ="text" name="defendant" >
-		<div class="errorMsg">{$obj->mErrorMessageDE}</td>
+		<div class="errorMsg">{$obj->mErrorMessage.defendant}</td>
 	</tr>
 	<tr>
 		<td>Defendant (abbrev.)</td>
 		<td><input type ="text" name="defendant_ab" >
-		<div class="errorMsg">{$obj->mErrorMessageDEAB}</td>
+		<div class="errorMsg">{$obj->mErrorMessage.defendant_ab}</td>
 	</tr>
 	<tr>
 		<td>IndexNo</td>
 		<td><input type ="text" name="indexNo" >
-		<div class="errorMsg">{$obj->mErrorMessageIN}</td>
+		<div class="errorMsg">{$obj->mErrorMessage.indexNo}</td>
 	</tr>
 	<tr>
 		<td>ClaimNo</td>
 		<td><input type ="text" name="claimNo" id="claimNo">
-		<div class="errorMsg">{$obj->mErrorMessageCL}</td>
+		<div class="errorMsg">{$obj->mErrorMessage.claimNo}</td>
 	</tr>
 	 <tr>
     <td>Date of Accident</td>
     <td><input type ="text" name="dateAccident" >
-    <div class="errorMsg">{$obj->mErrorMessageDA}</td>
+    <div class="errorMsg">{$obj->mErrorMessage.dateAccident}</td>
   </tr>
   <tr>
     <td>Policy Limit</td>
     <td><input type ="text" name="policyLimit" id="policyLimit" >
-    <div class="errorMsg">{$obj->mErrorMessagePL}</td>
+    <div class="errorMsg">{$obj->mErrorMessage.policyLimit}</td>
   </tr>
     <tr>
     <td>ExaminerID</td>
@@ -53,12 +53,12 @@
     <option value="{$obj->mExaminerID[i].ID}">{$obj->mExaminerID[i].ID}</option>
     {/section}
   </select>
-  <div class="errorMsg">{$obj->mErrorMessageEID}</td>
+  <div class="errorMsg">{$obj->mErrorMessage.examinerID}</td>
   </tr>
     <tr>
     <td>CaseName</td>
     <td><input type ="text" name="caseName" >
-    <div class="errorMsg">{$obj->mErrorMessageCN}</td>
+    <div class="errorMsg">{$obj->mErrorMessage.caseName}</td>
   </tr>
 	<tr>
 		<td></td>

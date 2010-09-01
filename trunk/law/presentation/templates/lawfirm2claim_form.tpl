@@ -9,12 +9,12 @@
   <tr>
     <td>Law Firm ID</td>
     <td><input type ="text" name="lawFirmId" id="lawFirmId">
-    <div class="errorMsg">{$obj->mErrorMessageID}</td>
+    <div class="errorMsg">{$obj->mErrorMessage.lawFirmId}</td>
   </tr>
   <tr>
     <td>Claim No</td>
     <td><input type ="text" name="claimNo" id="claimNo">
-    <div class="errorMsg">{$obj->mErrorMessageCL}</td>
+    <div class="errorMsg">{$obj->mErrorMessage.claimNo}</td>
   </tr>
   
   <tr>
