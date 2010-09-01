@@ -2,6 +2,9 @@
 // Activate session
 session_start();
 
+
+// Start output buffer
+ob_start();
 // Include utility Files
 require_once 'include/config.php';
 require_once BUSINESS_DIR . 'error_handler.php';
@@ -19,6 +22,9 @@ require_once BUSINESS_DIR . 'database_handler.php';
 // Load Business Tier
 require_once BUSINESS_DIR . 'catalog.php';
 
+// URL correction
+Link::CheckRequest();
+
 // Load Smarty template file
 $application = new Application();
 
@@ -27,6 +33,11 @@ $application->display('store_front.tpl');
 
 // Close the database connection
 DatabaseHandler::Close();
+
+// Output content from the buffer
+flush();
+ob_flush();
+ob_end_flush();
 ?>
 
 

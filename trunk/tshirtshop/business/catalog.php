@@ -116,7 +116,7 @@ class Catalog
 	
 	// Retrieves the list of products for the department page
 	public static function GetProductsOnDepartment(
-								$departmentId, $pageNo, &$HowManyPages)
+								$departmentId, $pageNo, &$rHowManyPages)
 	{
 		// Query that returns the number of products in the department page
 		$sql = 'CALL catalog_count_products_on_department(:department_id)';
@@ -211,6 +211,45 @@ class Catalog
 		// Execute the query and return the results
 		return DatabaseHandler::GetAll($sql, $params);
 		
+	}
+	
+	// Retrieves department name
+	public static function GetDepartmentName($departmentId)
+	{
+		// Build SQL query
+		$sql = 'CALL catalog_get_department_name(:department_id)';
+
+		// Build the parameters array
+		$params = array(':department_id' => $departmentId);
+		
+		// Execute the query and return the results
+		return DatabaseHandler::GetOne($sql,$params);
+	}
+	
+	// Retrieves category name
+	public static function GetCategoryName($categoryId)
+	{
+		// Build SQL query
+		$sql = 'CALL catalog_get_category_name(:category_id)';
+
+		// Build the parameters array
+		$params = array(':category_id' => $categoryId);
+		
+		// Execute the query and return the results
+		return DatabaseHandler::GetOne($sql,$params);
+	}
+	
+	// Retrieves product name
+	public static function GetProductName($productId)
+	{
+		// Build SQL query
+		$sql = 'CALL catalog_get_product_name(:product_id)';
+
+		// Build the parameters array
+		$params = array(':product_id' => $productId);
+		
+		// Execute the query and return the results
+		return DatabaseHandler::GetOne($sql,$params);
 	}
 }
 ?>

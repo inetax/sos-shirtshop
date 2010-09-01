@@ -32,7 +32,7 @@
 </IfModule>
 
 # Set the default 500 page for Apache errors
-ErrorDocument 500 /tshirtshop/500.php
+ErrorDocument 500 /500.php
 
 # Set the default 404 page
-ErrorDocument 404 /tshirtshop/404.php
+ErrorDocument 404 /404.php
