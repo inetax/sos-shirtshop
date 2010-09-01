@@ -51,10 +51,21 @@ class ErrorHandler
       if (DEBUGGING == true)
         echo '<div class="error_box"><pre>'. $error_message . '</pre></div>';
       else
-        echo SITE_GENERIC_ERROR_MESSAGE;
-
+      {
+        // Clean output buffer
+		ob_clean();
+		
+		// Load the 500 page
+		include '500.php';
+		
+		// Clear the output buffer and stop execution
+		flush();
+		ob_flush();
+		ob_end_clean();
+		exit();
+      }
       // Stop processing the request
-      exit();
+      exit();      
     }
   }
 

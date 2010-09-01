@@ -5,7 +5,7 @@
  "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-   <title>{#site_title#}</title>
+   <title>{$obj->mPageTitle}</title>
    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
    <link rel="stylesheet" href="{$obj->mSiteUrl}styles/tshirtshop.css" type="text/css">
 </head>
