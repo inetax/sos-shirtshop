@@ -12,44 +12,55 @@ require_once  'database_handler.php';
 // Load Business Tier
 require_once  'case.php';
 
-$q = '';
-if (isset($_GET['q'])) {
-    $q = strtolower($_GET['q']);
-}
-if (!$q) {
-    return;
-}
-
-$k='';
-$obj=null;
-if (isset($_GET['value'])) {
-	switch (strtolower($_GET['value'])) {
-    case "claimno":
-        $obj=Cases::GetClaimNo();
-        $k='ClaimNo';
-        break;
-	case "examinerid":
-        $obj=Cases::GetExaminersID();
-        $k='ID';
-        break;
-    case "firmid":
-        $obj=Cases::GetLawFirmId();
-        $k='ID';
-        break;
-    
-	}	
-}
-
-	
-for ($i=0;$i<count($obj);$i++)
+Class Search
 {
-if (strpos(strtolower($obj[$i][$k]), $q) !== false) {
-		echo $obj[$i][$k] . "\n";
+	public $mResult;
+	
+	public function setResults($q, $value)
+	{		
+							
+		switch (strtolower($value)) {
+    	case "claimno":
+        	$obj=Cases::GetClaimNo();
+        	$field='ClaimNo';
+        	break;
+		case "examinerid":
+        	$obj=Cases::GetExaminersID();
+        	$field='ID';
+        	break;
+    	case "firmid":
+        	$obj=Cases::GetLawFirmId();
+        	$field='ID';
+        	break;
+    	default:
+    		$obj=null;
+        	$field='';
+        	break;
+		}
+		
+			
+		for ($i=0;$i<count($obj);$i++)
+		{
+			
+			if (strpos(strtolower($obj[$i][$field]), $q) !== false)
+				$this->mResult = $this->mResult . $obj[$i][$field] . "\n";					
+		}		
 	}
 	
+	public function getResults()
+	{
+		return $this->mResult;
+	}
 }
-  
-  
+
+if (isset($_GET['q']) && isset($_GET['value']))
+{
+	$dan = new Search;	
+	$dan->setResults($_GET['q'],$_GET['value']);
+	echo $dan->mResult;
+}	
+
+
 // Close the database connection
 DatabaseHandler::Close();
 

@@ -2,8 +2,7 @@
 class VmailMerge
 {
   public $mLinkToUpdateMailMerge;  
-  public $mErrorMessage;  
-  public $mErrorMessageCL;
+  public $mErrorMessage = array('claimNo' => '');
   
   private $_mLinkToAddSuccess; 
   
@@ -21,21 +20,28 @@ class VmailMerge
   	if (isset($_POST['submit']))
     { 
     $claimNo=$_POST['claimNo'];    
-         
-    if ($claimNo==null)
-      $this->mErrorMessageCL='Claim No is required';     
     
-    $this->mErrorMessage = $this->mErrorMessageCL;
-    
-    if ($this->mErrorMessage == null)
-    {
-      Cases::UpdateVMailMerge($claimNo);
+    $this->check_data();      
 
-      header('Location: ' . 
-        htmlspecialchars_decode(
-          $this->_mLinkToAddSuccess));
+    if (count($this->mErrorMessage) ==0) 		
+		$this->handle_data($claimNo);
     }
+  }
+    public function check_data()
+	{
+	foreach($_POST as $key => $value)
+	{
+		if ($_POST[$key] =="") 
+		{			
+			$this->mErrorMessage[$key] =  $key . " is required";
+		}		
     }
-  }    
-  
+	}
+    
+	public function handle_data($claimNo)
+	{
+	Cases::UpdateVMailMerge($claimNo);
+
+	header('Location: ' . htmlspecialchars_decode($this->_mLinkToAddSuccess));
+	}		    
 }

@@ -8,37 +8,37 @@
   <tr>
     <td>ID</td>
     <td><input type ="text" name="lawFirmId" id="lawFirmId">
-    <div class="errorMsg">{$obj->mErrorMessageID}</td>
+    <div class="errorMsg">{$obj->mErrorMessage.lawFirmId}</td>
   </tr>
   <tr>
     <td>Law Firm Name</td>
     <td><input type ="text" name="lawFirmName" >
-    <div class="errorMsg">{$obj->mErrorMessageFN}</td>
+    <div class="errorMsg">{$obj->mErrorMessage.lawFirmName}</td>
   </tr>
   <tr>
     <td>Address</td>
     <td><input type ="text" name="address" >
-    <div class="errorMsg">{$obj->mErrorMessageAD}</td>
+    <div class="errorMsg">{$obj->mErrorMessage.address}</td>
   </tr>
   <tr>
     <td>City</td>
     <td><input type ="text" name="city" >
-    <div class="errorMsg">{$obj->mErrorMessageCT}</td>
+    <div class="errorMsg">{$obj->mErrorMessage.city}</td>
   </tr>
    <tr>
     <td>State</td>
     <td><input type ="text" name="state" id="state">
-    <div class="errorMsg">{$obj->mErrorMessageST}</td>
+    <div class="errorMsg">{$obj->mErrorMessage.state}</td>
   </tr>
    <tr>
     <td>Zip Code</td>
     <td><input type ="text" name="zipCode" >
-    <div class="errorMsg">{$obj->mErrorMessageZP}</td>
+    <div class="errorMsg">{$obj->mErrorMessage.zipCode}</td>
   </tr>
     <tr>
     <td>Telephone</td>
     <td><input type ="text" name="telephone" >
-    <div class="errorMsg">{$obj->mErrorMessageTEL}</td>
+    <div class="errorMsg">{$obj->mErrorMessage.telephone}</td>
   </tr>
   <tr>
     <td></td>

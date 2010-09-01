@@ -3,14 +3,13 @@ Class Lawfirm
 {
   public $mLinkToAddLawFirm;
   public $mResult;
-  public $mErrorMessage;
-  public $mErrorMessageID;
-  public $mErrorMessageFN;
-  public $mErrorMessageAD;
-  public $mErrorMessageCT;
-  public $mErrorMessageST;
-  public $mErrorMessageZP;
-  public $mErrorMessageTEL;
+  public $mErrorMessage = array('lawFirmId' => '',
+        'lawFirmName' => '',
+		'address' => '',
+		'city' => '',
+  		'state' => '',
+		'zipCode' => '',
+  		'telephone' => '');
   
   private $_mFirmID;
   private $_mLinkToAddSuccess;
@@ -36,51 +35,38 @@ Class Lawfirm
     $zipCode=$_POST['zipCode'];
     $telephone=$_POST['telephone'];
     
-    if ($lawFirmId==null)
-    {
-      $this->mErrorMessageID='ID is required';
-    }
-    else
-    {
-    // Check to make sure ExaminerID is unique
-    for ($i=0;$i<count($this->_mFirmID);$i++)
-    {    	
-      if (strcmp($lawFirmId, $this->_mFirmID[$i]['ID']) == 0) {
-        $this->mErrorMessageID='This ID is already in database.<br/> Please choose another.';
-     }
-    } 
-      
-    }
-    
-    if ($lawFirmName==null)
-      $this->mErrorMessageFN='Law Firm Name is required';      
-    
-    if ($address==null)
-      $this->mErrorMessageAD='Address is required';
-      
-    if ($city==null)
-      $this->mErrorMessageCT='City is required';
-     
-    if ($state==null)
-      $this->mErrorMessageST='State is required';      
-    
-    if ($zipCode==null)
-      $this->mErrorMessageZP='Zip Code is required';
-      
-    if ($telephone==null)
-      $this->mErrorMessageTEL='Telephone No is required';
-    
-    $this->mErrorMessage = $this->mErrorMessageID . $this->mErrorMessageFN . $this->mErrorMessageAD. $this->mErrorMessageCT . $this->mErrorMessageST . $this->mErrorMessageZP . $this->mErrorMessageTEL;
-    
-    if ($this->mErrorMessage == null)
-    {
-      Cases::AddLawFirm($lawFirmId,$lawFirmName,$address,$city,$state,$zipCode,$telephone);
-
-      header('Location: ' . 
-        htmlspecialchars_decode(
-          $this->mLinkToAddSuccess));
-    }
+    $this->check_data();
+	
+    if (count($this->mErrorMessage) ==0) 		
+		$this->handle_data($lawFirmId,$lawFirmName,$address,$city,$state,$zipCode,$telephone);
     }
 	}
+	
+    public function check_data()
+	{
+	foreach($_POST as $key => $value)
+	{
+		if ($_POST[$key] =="") 
+		{			
+			$this->mErrorMessage[$key] =  $key . " is required";
+		}
+		else if ($key == 'lawFirmId')
+    	{
+    	// Check to make sure ExaminerID is unique
+    	for ($i=0;$i<count($this->_mFirmID);$i++)
+    	{    	
+      		if (strcmp($_POST[$key], $this->_mFirmID[$i]['ID']) == 0) 
+        		$this->mErrorMessage['lawFirmId']='This ID is already in database.<br/> Please choose another.';
+    	} 			
+		}
+    }
+	}
+    
+	public function handle_data($lawFirmId,$lawFirmName,$address,$city,$state,$zipCode,$telephone)
+	{
+	Cases::AddLawFirm($lawFirmId,$lawFirmName,$address,$city,$state,$zipCode,$telephone);
+
+	header('Location: ' . htmlspecialchars_decode($this->_mLinkToAddSuccess));
+	}  
 }
 ?>
