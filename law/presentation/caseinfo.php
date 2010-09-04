@@ -14,6 +14,7 @@ class Caseinfo
 		'policyLimit' => '',
   		'examinerID' => '',
 		'caseName' => '');
+  public $mErrorCount;
     
   private $_mLinkToAddSuccess; 
   
@@ -33,6 +34,7 @@ class Caseinfo
 		if ($_POST[$key] =="") 
 		{			
 		$this->mErrorMessage[$key] =  $key . " is required";
+		++$this->mErrorCount;
 		} 			
 	}
 				
@@ -65,8 +67,8 @@ class Caseinfo
     
     $this->check_data();
 	
-    if (count($this->mErrorMessage) ==0) 		
-		$this->handle_data($examiner_id,$honorific,$examiner_firstname,$examiner_lastname);
+    if ($this->mErrorCount ==0) 		
+		$this->handle_data($plaintiff,$defendant,$indexNo,$claimNo,$dateAccident,$policyLimit, $examinerID,$plaintiff_ab, $defendant_ab, $caseName);
 	
 	}    
   }

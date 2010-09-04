@@ -24,7 +24,7 @@ class Gui
         $this->mContentsCell = 'examiner_form.tpl';
         break;
     case "AddSuccess":
-        $this->mContentsCell = 'examiner_validate.tpl';
+        $this->mContentsCell = 'confirm.tpl';
        break;
     case "AddCaseInfo":
         $this->mContentsCell = 'caseinfo_form.tpl';
@@ -34,6 +34,9 @@ class Gui
        break;
     case "AssignFirm2Claim":
         $this->mContentsCell = 'lawfirm2claim_form.tpl';
+       break;
+    case "UpdatevInceptionCases":
+        $this->mContentsCell = 'vinceptioncases_form.tpl';
        break;
     case "UpdatevMailMerge":
         $this->mContentsCell = 'vmailmerge_form.tpl';

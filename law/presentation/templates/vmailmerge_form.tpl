@@ -8,7 +8,7 @@
 	<tr>
 		<td>ClaimNo</td>
 		<td><input type ="text" name="claimNo" id="claimNo">
-		<div class="errorMsg">{$obj->mErrorMessage.claimNo}</td>
+		<div class="errorMsg">{$obj->mErrorMessage.claimNo}</div></td>
 	</tr>
 	<tr>
 		<td></td>

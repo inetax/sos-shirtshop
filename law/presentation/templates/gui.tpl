@@ -11,35 +11,15 @@
    <script type="text/javascript" src="js/jquery.js"></script>
    <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
    <script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+   <script type="text/javascript" src="js/jquery.ui.core.js"></script>
+   <script type="text/javascript" src="js/jquery.ui.datepicker.js"></script>
    <script type="text/javascript" src="js/custom.js"></script>
    
 </head>
 <body>
 <div id="doc" class="yui-t7">
    <div id="hd" role="banner"><h1>Complaint Dept.</h1>
-   <ul id="jsddm">
-    <li><a href="{$obj->mSiteUrl}?view=ClaimExaminer">Claim Examiner</a>
-        <ul>
-            <li><a href="{$obj->mSiteUrl}?view=AddExaminer">Add a Claim Examiner</a></li>
-            <li><a href="{$obj->mSiteUrl}?view=ClaimExaminer">View All Claim Examiners</a></li>           
-        </ul>
-    </li>
-    <li><a href="{$obj->mSiteUrl}?view=CasesInfo">Case Information</a>
-        <ul>
-            <li><a href="{$obj->mSiteUrl}?view=AddCaseInfo">Add Case Information</a></li>
-            <li><a href="{$obj->mSiteUrl}?view=CasesInfo">View Cases</a></li>          
-        </ul>
-    </li>
-    <li><a href="{$obj->mSiteUrl}?view=LawFirms">Law Firms</a>
-    	<ul>
-            <li><a href="{$obj->mSiteUrl}?view=AddLawFirm">Add Law Firm</a></li>
-            <li><a href="{$obj->mSiteUrl}?view=AssignFirm2Claim">Assign Law Firm to Case</a></li>          
-        </ul>
-    </li>
-    
-    <li><a href="{$obj->mSiteUrl}?view=UpdatevMailMerge">vMailMerge</a></li>
-    <li><a href="#">Help</a></li>
-</ul>
+     {include file='nav.tpl' }
 <p>&nbsp;</p><br/>
 
   </div>
