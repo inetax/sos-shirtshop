@@ -3,7 +3,7 @@
 {* Start lawfirm add box *}
 
 <div class="box">
-  <b>Add Law Firm</b>
+  <b>Link Law Firm to Claim Number</b>
   <form method="post" action="{$obj->mLinkToAssignFirm2Claim}">
   <table>
   <tr>

@@ -70,28 +70,34 @@ class Link
     return self::Build('?view=AddSuccess' );
   }
 
-  // Create a Valid Examiner link
+  // Create a Valid CaseInfo link
   public static function ToValidateCaseInfo()
   {
     return self::Build('?view=AddCaseInfo' );
   }
   
-// Create a Valid Examiner link
+// Create a Valid LawFirm link
   public static function ToValidateLawFirm()
   {
     return self::Build('?view=AddLawFirm' );
   }
 
-// Create a Valid Examiner link
+// Create a Valid Firm2Claim link
   public static function ToAssignFirm2Claim()
   {
     return self::Build('?view=AssignFirm2Claim' );
   }
   
-// Create a Valid Examiner link
+// Create a Valid MailMerge link
   public static function ToUpdatevMailMerge()
   {
     return self::Build('?view=UpdatevMailMerge' );
+  }
+  
+// Create a Valid InceptionCase link
+  public static function ToUpdatevInceptionCases()
+  {
+    return self::Build('?view=UpdatevInceptionCases' );
   }
 }
 ?>

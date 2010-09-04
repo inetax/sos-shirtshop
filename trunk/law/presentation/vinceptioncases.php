@@ -1,19 +1,20 @@
 <?php
-class VmailMerge
+class Vinceptioncases
 {
-  public $mLinkToUpdateMailMerge;  
-  public $mErrorMessage = array('claimNo' => '');
+  public $mLinkToUpdatevInceptionCases;  
+  public $mErrorMessage = array('startDate' => '');
   public $mErrorCount;
+  
   private $_mLinkToAddSuccess; 
   
   // Class constructor
   public function __construct()
   {    
-    $this->mLinkToUpdateMailMerge = Link::ToUpdatevMailMerge();    
+    $this->mLinkToUpdatevInceptionCases = Link::ToUpdatevInceptionCases();    
     $this->_mLinkToAddSuccess = Link::ToAddSuccess();   
-  }
+  }  
   
-    public function check_data()
+	public function check_data()
 	{
 	foreach($_POST as $key => $value)
 	{
@@ -25,25 +26,25 @@ class VmailMerge
     }
 	}
     
-	public function handle_data($claimNo)
+	public function handle_data($startDate)
 	{
-	Cases::UpdateVMailMerge($claimNo);
+	Cases::UpdateVInceptionCases($startDate);
 
 	header('Location: ' . htmlspecialchars_decode($this->_mLinkToAddSuccess));
 	}
 
-// Initialize presentation object
+	// Initialize presentation object
   public function init()
   {
 
   	if (isset($_POST['submit']))
     { 
-    $claimNo=$_POST['claimNo'];    
+    $startDate=$_POST['startDate'];    
     
     $this->check_data();      
-
+	
     if ($this->mErrorCount ==0) 		
-		$this->handle_data($claimNo);
+		$this->handle_data($startDate);				
     }
   }
 }

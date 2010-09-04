@@ -23,6 +23,10 @@
 		<td><input type ="text" name="examinerLastName" ><div class="errorMsg">{$obj->mErrorMessage.examinerLastName}</div</td>
 	</tr>
 	<tr>
+		<td>Fax Number</td>
+		<td><input type ="text" name="fax" ><div class="errorMsg">{$obj->mErrorMessage.fax}</div</td>
+	</tr>
+	<tr>
 		<td></td>
 		<td><input type="submit"  name="submit" value="Save"></td>
 	</tr>
