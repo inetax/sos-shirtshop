@@ -19,7 +19,7 @@ function jsddm_canceltimer()
       closetimer = null;}}
 
 // Arrays for autocomplete plugins
-var states = "Alabama,Alaska,Arizona,Arkansas,California,Colorado,Connecticut,Delaware,Florida,Georgia,Hawaii,Idaho,Illinois,Indiana,Iowa,Kansas,Kentucky,Louisiana,Maine,Maryland,Massachusetts,Michigan,Minnesota,Mississippi,Missouri,Montana,Nebraska,Nevada,New Hampshire,New Jersey,New Mexico,New York,North Carolina,North Dakota,Ohio,Oklahoma,Oregon,Pennsylvania,Rhode Island,South Carolina,South Dakota,Tennessee,Texas,Utah,Vermont,Virginia,Washington,West Virginia,Wisconsin,Wyoming".split(",");
+var states = "AL,AK,AZ,AR,CA,CO,CT,DE,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MA,MI,MN,MS,MO,MT,NE,NV,NH,NJ,NM,NY,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WA,WV,WI,WY".split(",");
 var honorific= 'Mr\. Ms\. Mrs\. Miss'.split(" ");
 var policyLimit='25/50 50/100 100/300'.split(" "); 
 
@@ -37,6 +37,7 @@ $(document).ready(function()
         $('#jsddm > li').bind('mouseover', jsddm_open);
         $('#jsddm > li').bind('mouseout',  jsddm_timer);
 		document.onclick = jsddm_close;
-
+		
+		$("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
     } 
 ); 

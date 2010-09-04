@@ -64,16 +64,18 @@ class Cases
 	
 	// Adds Claim Examiner
 	public static function AddExaminer($examinerId,$honorific, $examinerFirstName,
-										$examinerLastName)
+										$examinerLastName,$fax, $status)
 	{
 		// Build the SQL Query
-		$sql = 'CALL cases_add_examiner(:ID,:Honorific,:ExaminerFirstName,:ExaminerLastName)';
+		$sql = 'CALL cases_add_examiner(:ID,:Honorific,:ExaminerFirstName,:ExaminerLastName,:Fax, :Status)';
 		
 		// Build the parameters array
 		$params = array(':ID' => $examinerId,
 						':Honorific' => $honorific,
 						':ExaminerFirstName' => $examinerFirstName,
-						':ExaminerLastName' => $examinerLastName);
+						':ExaminerLastName' => $examinerLastName,
+						':Fax' => $fax,
+						':Status' => $status);
 		// Execute the query
 		DatabaseHandler::Execute($sql,$params);
 	}
@@ -144,6 +146,18 @@ class Cases
 		// Execute the query
 		DatabaseHandler::Execute($sql,$params);
 	}
+	
+// Update VInception Cases
+  public static function UpdateVInceptionCases($startDate)
+  {
+    // Build the SQL Query
+    $sql = 'CALL cases_create_vinceptioncases(:StartDate)';
+    
+    // Build the parameters array
+    $params = array(':StartDate' => $startDate);
+    // Execute the query
+    DatabaseHandler::Execute($sql,$params);
+  }
   
 }
 ?>
