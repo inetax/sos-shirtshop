@@ -2,6 +2,7 @@
 @import "base-min.css";
 @import "fonts-min.css";
 @import "grids-min.css";
+@import "redmond/jquery-ui-1.8.4.custom.css";
 
 .errorMsg{
   color:red;
