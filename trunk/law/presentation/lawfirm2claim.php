@@ -9,7 +9,8 @@ Class Lawfirm2claim
    	
 	public function __construct()
 	{
-		$this->mLinkToAssignFirm2Claim=Link::ToAssignFirm2Claim();		
+		$this->mLinkToAssignFirm2Claim=Link::ToAssignFirm2Claim();
+		$this->_mLinkToAddSuccess = Link::ToAddSuccess();		
 	}
 			
 	public function check_data()
@@ -24,7 +25,7 @@ Class Lawfirm2claim
     }
 	}
 	
-	public function handle_data($lawFirmId,$lawFirmName,$address,$city,$state,$zipCode,$telephone)
+	public function handle_data($lawFirmId,$claimNo)
 	{
 	Cases::AssignFirm2Claim($lawFirmId,$claimNo);
 
@@ -42,7 +43,7 @@ Class Lawfirm2claim
     $this->check_data();      
 
     if ($this->mErrorCount ==0) 		
-		$this->handle_data($lawFirmId,$lawFirmName,$address,$city,$state,$zipCode,$telephone);
+		$this->handle_data($lawFirmId,$claimNo);
     }
 	}
 }
