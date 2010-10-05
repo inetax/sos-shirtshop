@@ -8,8 +8,7 @@ Class Lawfirm
 		'address' => '',
 		'city' => '',
   		'state' => '',
-		'zipCode' => '',
-  		'telephone' => '');
+		'zipCode' => '');
   public $mErrorCount=0;
   
   private $_mFirmID;
@@ -29,8 +28,14 @@ Class Lawfirm
 	{
 		if ($_POST[$key] =="") 
 		{			
-			$this->mErrorMessage[$key] =  $key . " is required";
-			++$this->mErrorCount;
+			switch($key){
+			case "telephone":
+				break;
+			default:
+				$this->mErrorMessage[$key] =  $key . " is required";
+				++$this->mErrorCount;
+				break;
+			}			
 		}
 		else if ($key == 'lawFirmId')
     	{
@@ -68,9 +73,10 @@ Class Lawfirm
     $telephone=$_POST['telephone'];
         
     $this->check_data();
-	
-    if ($this->mErrorCount==0) 		
-		$this->handle_data($lawFirmId,$lawFirmName,$address,$city,$state,$zipCode,$telephone);			
+	  
+    if ($this->mErrorCount==0) 		    	
+		$this->handle_data($lawFirmId,$lawFirmName,$address,$city,$state,$zipCode,$telephone);
+					
     }    
 	}
 	
