@@ -8,12 +8,12 @@
   <table>
   <tr>
     <td>Law Firm ID</td>
-    <td><input type ="text" name="lawFirmId" id="lawFirmId">
+    <td><input type ="text" name="lawFirmId" id="lawFirmId" value="{if isset($smarty.post.lawFirmId)}{$smarty.post.lawFirmId}{/if}">
     <div class="errorMsg">{$obj->mErrorMessage.lawFirmId}</td>
   </tr>
   <tr>
     <td>Claim No</td>
-    <td><input type ="text" name="claimNo" id="claimNo">
+    <td><input type ="text" name="claimNo" id="claimNo" value="{if isset($smarty.post.claimNo)}{$smarty.post.claimNo}{/if}">
     <div class="errorMsg">{$obj->mErrorMessage.claimNo}</td>
   </tr>
   

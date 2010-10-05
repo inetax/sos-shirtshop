@@ -3,42 +3,41 @@
 {* Start lawfirm add box *}
 <div class="box">
   <b>Add Law Firm</b>
-  <form method="post" action="{$obj->mLinkToAddLawFirm}">
+  <form method="post" action="{$obj->mLinkToAddLawFirm}" name="ss">
   <table>
   <tr>
     <td>ID</td>
-    <td><input type ="text" name="lawFirmId" id="lawFirmId">
-    <div class="errorMsg">{$obj->mErrorMessage.lawFirmId}</td>
+    <td><input type ="text" name="lawFirmId" id="lawFirmId" value="{if isset($smarty.post.lawFirmId)}{$smarty.post.lawFirmId}{/if}">
+    <div class="errorMsg">{$obj->mErrorMessage.lawFirmId}</div></td>
   </tr>
   <tr>
     <td>Law Firm Name</td>
-    <td><input type ="text" name="lawFirmName" >
-    <div class="errorMsg">{$obj->mErrorMessage.lawFirmName}</td>
+    <td><input type ="text" name="lawFirmName" value="{if isset($smarty.post.lawFirmName)}{$smarty.post.lawFirmName}{/if}">
+    <div class="errorMsg">{$obj->mErrorMessage.lawFirmName}</div></td>
   </tr>
   <tr>
     <td>Address</td>
-    <td><input type ="text" name="address" >
-    <div class="errorMsg">{$obj->mErrorMessage.address}</td>
+    <td><input type ="text" name="address" value="{if isset($smarty.post.address)}{$smarty.post.address}{/if}">
+    <div class="errorMsg">{$obj->mErrorMessage.address}</div></td>
   </tr>
   <tr>
     <td>City</td>
-    <td><input type ="text" name="city" >
-    <div class="errorMsg">{$obj->mErrorMessage.city}</td>
+    <td><input type ="text" name="city" value="{if isset($smarty.post.city)}{$smarty.post.city}{/if}">
+    <div class="errorMsg">{$obj->mErrorMessage.city}</div></td>
   </tr>
    <tr>
     <td>State</td>
-    <td><input type ="text" name="state" id="state">
-    <div class="errorMsg">{$obj->mErrorMessage.state}</td>
+    <td><input type ="text" name="state" id="state" value="{if isset($smarty.post.state)}{$smarty.post.state}{/if}">
+    <div class="errorMsg">{$obj->mErrorMessage.state}</div></td>
   </tr>
    <tr>
     <td>Zip Code</td>
-    <td><input type ="text" name="zipCode" >
-    <div class="errorMsg">{$obj->mErrorMessage.zipCode}</td>
+    <td><input type ="text" name="zipCode" value="{if isset($smarty.post.zipCode)}{$smarty.post.zipCode}{/if}">
+    <div class="errorMsg">{$obj->mErrorMessage.zipCode}</div></td>
   </tr>
     <tr>
     <td>Telephone</td>
-    <td><input type ="text" name="telephone" >
-    <div class="errorMsg">{$obj->mErrorMessage.telephone}</td>
+    <td><input type ="text" name="telephone" value="{if isset($smarty.post.telephone)}{$smarty.post.telephone}{/if}"></td>
   </tr>
   <tr>
     <td></td>
