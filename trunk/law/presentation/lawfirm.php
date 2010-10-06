@@ -55,7 +55,7 @@ Class Lawfirm
 	public function handle_data($lawFirmId,$lawFirmName,$address,$city,$state,$zipCode,$telephone)
 	{
 	Cases::AddLawFirm($lawFirmId,$lawFirmName,$address,$city,$state,$zipCode,$telephone);
-
+	$_SESSION['lawfirm']=1;
 	header('Location: ' . htmlspecialchars_decode($this->_mLinkToAddSuccess));
 	}  
 	

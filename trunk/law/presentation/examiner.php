@@ -50,7 +50,7 @@ class Examiner
 	public function handle_data($examiner_id,$honorific,$examiner_firstname,$examiner_lastname, $fax, $status)
 	{
 	Cases::AddExaminer($examiner_id,$honorific,$examiner_firstname,$examiner_lastname, $fax, $status);
-
+	$_SESSION['examiner']=1;
 	header('Location: ' . htmlspecialchars_decode($this->_mLinkToAddSuccess));
 	}
 	

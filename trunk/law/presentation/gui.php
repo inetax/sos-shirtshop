@@ -55,6 +55,9 @@ class Gui
         break;  
     case "LawFirms":
         $this->mContentsCell = 'lawfirm_view.tpl';
+        break;
+    case "RemoveCheck":
+        $this->mContentsCell = 'removecheck.tpl';
         break;      
 	}
     }

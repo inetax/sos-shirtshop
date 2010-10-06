@@ -1,5 +1,6 @@
 {* nav.tpl *}
 <ul id="jsddm">
+	<li><a href="/">Home</a></li>
     <li><a href="{$obj->mSiteUrl}?view=ClaimExaminer">Claim Examiner</a>
         <ul>
             <li><a href="{$obj->mSiteUrl}?view=AddExaminer">Add a Claim Examiner</a></li>
@@ -24,6 +25,5 @@
             <li><a href="{$obj->mSiteUrl}?view=UpdatevInceptionCases">vInceptionCases</a></li>
             <li><a href="{$obj->mSiteUrl}?view=UpdatevMailMerge">vMailMerge</a></li>          
         </ul>
-    </li>
-    <li><a href="#">Help</a></li>
+    </li>    
 </ul>

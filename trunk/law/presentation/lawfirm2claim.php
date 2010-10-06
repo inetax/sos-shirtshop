@@ -28,7 +28,7 @@ Class Lawfirm2claim
 	public function handle_data($lawFirmId,$claimNo)
 	{
 	Cases::AssignFirm2Claim($lawFirmId,$claimNo);
-
+	$_SESSION['link']=1;
 	header('Location: ' . htmlspecialchars_decode($this->_mLinkToAddSuccess));
 	}
 
