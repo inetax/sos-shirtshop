@@ -43,7 +43,7 @@ class Caseinfo
 	public function handle_data($plaintiff,$defendant,$indexNo,$claimNo,$dateAccident,$policyLimit, $examinerID,$plaintiff_ab, $defendant_ab, $caseName)
 	{
 	Cases::AddCaseInfo($plaintiff,$defendant,$indexNo,$claimNo,$dateAccident,$policyLimit, $examinerID,$plaintiff_ab, $defendant_ab, $caseName);
-
+	$_SESSION['caseinfo']=1;
 	header('Location: ' . htmlspecialchars_decode($this->_mLinkToAddSuccess));
 	}
 	

@@ -28,7 +28,7 @@ class VmailMerge
 	public function handle_data($claimNo)
 	{
 	Cases::UpdateVMailMerge($claimNo);
-
+	$_SESSION['vmailmerge']=1;
 	header('Location: ' . htmlspecialchars_decode($this->_mLinkToAddSuccess));
 	}
 
