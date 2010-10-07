@@ -12,19 +12,19 @@
 	</tr>
 	<tr>
 		<td>Honorific</td>
-		<td><input type ="text" name="honorific" id="honorific" value="{if isset($smarty.post.honorific)}{$smarty.post.honorific}{/if}"><div class="errorMsg">{$obj->mErrorMessage.honorific}</div</td>
+		<td><input type ="text" name="honorific" id="honorific" value="{if isset($smarty.post.honorific)}{$smarty.post.honorific}{/if}"><div class="errorMsg">{$obj->mErrorMessage.honorific}</div></td>
 	</tr>
 	<tr>
 		<td>Examiner First Name</td>
-		<td><input type ="text" name="examinerFirstName" value="{if isset($smarty.post.examinerFirstName)}{$smarty.post.examinerFirstName}{/if}"><div class="errorMsg">{$obj->mErrorMessage.examinerFirstName}</div</td>
+		<td><input type ="text" name="examinerFirstName" value="{if isset($smarty.post.examinerFirstName)}{$smarty.post.examinerFirstName}{/if}"><div class="errorMsg">{$obj->mErrorMessage.examinerFirstName}</div></td>
 	</tr>
 	<tr>
 		<td>Examiner Last Name</td>
-		<td><input type ="text" name="examinerLastName" value="{if isset($smarty.post.examinerLastName)}{$smarty.post.examinerLastName}{/if}"><div class="errorMsg">{$obj->mErrorMessage.examinerLastName}</div</td>
+		<td><input type ="text" name="examinerLastName" value="{if isset($smarty.post.examinerLastName)}{$smarty.post.examinerLastName}{/if}"><div class="errorMsg">{$obj->mErrorMessage.examinerLastName}</div></td>
 	</tr>
 	<tr>
 		<td>Fax Number</td>
-		<td><input type ="text" name="fax" value="{if isset($smarty.post.fax)}{$smarty.post.fax}{/if}"><div class="errorMsg">{$obj->mErrorMessage.fax}</div</td>
+		<td><input type ="text" name="fax" value="{if isset($smarty.post.fax)}{$smarty.post.fax}{/if}"><div class="errorMsg">{$obj->mErrorMessage.fax}</div></td>
 	</tr>
 	<tr>
 		<td></td>
