@@ -80,16 +80,17 @@ class Cases
 		DatabaseHandler::Execute($sql,$params);
 	}
 	
-// Adds Claim Examiner
-  public static function AddCaseInfo($plaintiff,$defendants, $indexNo,
+// Adds Case Info
+  public static function AddCaseInfo($plaintiff,$defendants, $client, $indexNo,
                     $claimNo, $dateAccident, $policyLimit, $examinerID,$plaintiff_ab, $defendant_ab, $caseName)
   {
     // Build the SQL Query
-    $sql = 'CALL cases_add_caseinfo(:Plaintiff,:Defendants,:IndexNo,:ClaimNo,:DateAccident,:PolicyLimit,:ExaminerID,:PlaintiffAB,:DefendantAB,:CaseName, :TimeCreated)';
+    $sql = 'CALL cases_add_caseinfo(:Plaintiff,:Defendants,:Client,:IndexNo,:ClaimNo,:DateAccident,:PolicyLimit,:ExaminerID,:PlaintiffAB,:DefendantAB,:CaseName, :TimeCreated)';
     
     // Build the parameters array
     $params = array(':Plaintiff' => $plaintiff,
                      ':Defendants' => $defendants,
+                     ':Client' => $client,
                      ':IndexNo' => $indexNo,
                      ':ClaimNo' => $claimNo,
                      ':DateAccident' => $dateAccident,

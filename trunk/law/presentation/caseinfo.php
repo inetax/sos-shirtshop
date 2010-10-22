@@ -8,6 +8,7 @@ class Caseinfo
         'plaintiff_ab' => '',
 		'defendant' => '',
 		'defendant_ab' => '',
+		'client' => '',
   		'indexNo' => '',
 		'claimNo' => '',
   		'dateAccident' => '',
@@ -40,9 +41,9 @@ class Caseinfo
 				
 	}
 
-	public function handle_data($plaintiff,$defendant,$indexNo,$claimNo,$dateAccident,$policyLimit, $examinerID,$plaintiff_ab, $defendant_ab, $caseName)
+	public function handle_data($plaintiff,$defendant,$client,$indexNo,$claimNo,$dateAccident,$policyLimit, $examinerID,$plaintiff_ab, $defendant_ab, $caseName)
 	{
-	Cases::AddCaseInfo($plaintiff,$defendant,$indexNo,$claimNo,$dateAccident,$policyLimit, $examinerID,$plaintiff_ab, $defendant_ab, $caseName);
+	Cases::AddCaseInfo($plaintiff,$defendant,$client,$indexNo,$claimNo,$dateAccident,$policyLimit, $examinerID,$plaintiff_ab, $defendant_ab, $caseName);
 	$_SESSION['caseinfo']=1;
 	header('Location: ' . htmlspecialchars_decode($this->_mLinkToAddSuccess));
 	}
@@ -56,6 +57,7 @@ class Caseinfo
    
     $plaintiff=$_POST['plaintiff'];
     $defendant=$_POST['defendant'];
+    $client=$_POST['client'];
     $plaintiff_ab=$_POST['plaintiff_ab'];
     $defendant_ab=$_POST['defendant_ab'];
     $indexNo=$_POST['indexNo'];
@@ -68,7 +70,8 @@ class Caseinfo
     $this->check_data();
 	
     if ($this->mErrorCount ==0) 		
-		$this->handle_data($plaintiff,$defendant,$indexNo,$claimNo,$dateAccident,$policyLimit, $examinerID,$plaintiff_ab, $defendant_ab, $caseName);
+		$this->handle_data($plaintiff, $defendant, $client, $indexNo, $claimNo, 
+		$dateAccident, $policyLimit, $examinerID, $plaintiff_ab, $defendant_ab, $caseName);
 	
 	}    
   }
