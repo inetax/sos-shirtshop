@@ -26,6 +26,11 @@
 		<div class="errorMsg">{$obj->mErrorMessage.defendant_ab}</div></td>
 	</tr>
 	<tr>
+		<td>Client<br/>(ALL CAPS)</td>
+		<td><input type ="text" name="client" value="{if isset($smarty.post.client)}{$smarty.post.client}{/if}">
+		<div class="errorMsg">{$obj->mErrorMessage.client}</div></td>
+	</tr>
+	<tr>
 		<td>IndexNo</td>
 		<td><input type ="text" name="indexNo" value="{if isset($smarty.post.indexNo)}{$smarty.post.indexNo}{/if}">
 		<div class="errorMsg">{$obj->mErrorMessage.indexNo}</div></td>
