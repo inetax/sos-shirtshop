@@ -39,5 +39,23 @@ $(document).ready(function()
 		document.onclick = jsddm_close;
 		
 		$("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
+		
+		$('#fax').mask("(999)999-9999"); 
+		$('#telephone').mask("(999)999-9999");
+		
+		$("#honorific").focus(function(){$("#tip-honorific").toggle(); return false;});
+		$("#honorific").blur(function(){$("#tip-honorific").toggle(); return false;});				
+		$("#plaintiff").focus(function(){$("#tip-plaintiff-docheading").toggle(); return false;});
+		$("#plaintiff").blur(function(){$("#tip-plaintiff-docheading").toggle(); return false;});
+		$("#plaintiff_ab").focus(function(){$("#tip-plaintiff-list").toggle(); return false;});
+		$("#plaintiff_ab").blur(function(){$("#tip-plaintiff-list").toggle(); return false;});
+		$("#defendant").focus(function(){$("#tip-defendant-docheading").toggle(); return false;});
+		$("#defendant").blur(function(){$("#tip-defendant-docheading").toggle(); return false;});
+		$("#defendant_ab").focus(function(){$("#tip-defendant-list").toggle(); return false;});
+		$("#defendant_ab").blur(function(){$("#tip-defendant-list").toggle(); return false;});
+		$("#client").focus(function(){$("#tip-client").toggle(); return false;});
+		$("#client").blur(function(){$("#tip-client").toggle(); return false;});
+
+		
     } 
 ); 

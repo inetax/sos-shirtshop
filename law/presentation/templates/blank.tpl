@@ -5,7 +5,7 @@
 {* Start lawfirm add box *}
 <div class="box">
   <b>5 Steps to a Successful Mail Merge</b>
-  
+  <p></p>
   <table>
   <tr>
     <td>1</td>

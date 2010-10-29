@@ -4,9 +4,19 @@
 @import "grids-min.css";
 @import "redmond/jquery-ui-1.8.4.custom.css";
 
+a{
+	color:#0A315C;
+	text-decoration:none;
+}
+a:hover{ 
+  color: #8D5A0B; 
+  text-decoration:underline;
+  }
+
 .errorMsg{
   color:red;
   font-weight:bold;
+  margin-left:15px;
 }
 
 th.headerSortUp { 
@@ -62,3 +72,59 @@ th.headerSortDown {
     
     #jsddm li ul li a:hover
     { background: #7F1616}
+html{
+background-image: url(../images/nybridge.gif);
+background-attachment:fixed;
+}
+
+form * {margin:0;padding:0;} /* Standard margin and padding reset, normally done on the body */
+
+legend {
+  color:#000; /* IE styles legends with blue text by default */
+  margin-left:15px; /* A hack that only ie reads to position the legend in the same place cross browser */
+  margin-bottom:10px;
+  font-size:18px;
+  font-family: Tahoma, Arial, sans-serif;
+  margin-top:5px;
+}
+
+fieldset {
+  border:1px solid #666666; /* Default fieldset borders vary cross browser, so make them the same */
+  width:675px;
+
+}
+fieldset div {
+  overflow:hidden; /* Contain the floating elements */
+  display:inline-block; /* Give layout in ie to contain float */
+  margin: 5px 0 0 10px;
+  padding: 1px 3px;
+  
+}
+fieldset div {display:block;} /* Reset element back to block leaving layout in ie */
+label {
+  float:left; /* Take out of flow so the input starts at the same height */
+  width:105px; /* Set a width so the inputs line up */
+}
+
+.hints {
+display: none;
+color:blue;
+background-color:#CCCCCC;
+padding: 5px; 
+}
+
+table td{
+	border-color:#FFF;
+	padding:10px;
+	border-style:dashed;
+	border-width:2px;
+	font-size:15px;
+	font-family: Arial;
+}
+
+h1{
+font-family: Courier, Arial;
+font-size:35px;
+padding:0px;
+margin:10px 0px 10px 0px;
+}

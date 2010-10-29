@@ -12,7 +12,8 @@
    <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
    <script type="text/javascript" src="js/jquery.autocomplete.js"></script>
    <script type="text/javascript" src="js/jquery.ui.core.js"></script>
-   <script type="text/javascript" src="js/jquery.ui.datepicker.js"></script>
+   <script type="text/javascript" src="js/jquery.ui.datepicker.js"></script>   
+   <script type="text/javascript" src="js/jquery.maskedinput-1.2.2.js"></script>
    <script type="text/javascript" src="js/custom.js"></script>
    
 </head>
