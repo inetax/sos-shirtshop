@@ -28,7 +28,7 @@ ini_set('sendmail_from', SENDMAIL_FROM);
 // By default we don't log errors to a file
 define('LOG_ERRORS', false);
 //define('LOG_ERRORS_FILE', 'c:\\tshirtshop\\errors_log.txt'); // Windows
- define('LOG_ERRORS_FILE', '/home/sso/Documents/law/errors.log'); // Linux
+ define('LOG_ERRORS_FILE', '/home/sso/www/law/errors.log'); // Linux
 /* Generic error message to be displayed instead of debug info
    (when DEBUGGING is false) */
 define('SITE_GENERIC_ERROR_MESSAGE', '<h1>Complaint_Dept Error!</h1>');

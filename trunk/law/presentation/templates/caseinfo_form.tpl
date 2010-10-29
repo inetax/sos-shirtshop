@@ -2,74 +2,67 @@
 {load_presentation_object filename="caseinfo" assign="obj"}
 {* Start examiner add box *}
 <div class="box">
-  <b>Add Case Information</b>
 	<form method="post" action="{$obj->mLinkToAddCaseInfo}">
-	<table>
-	<tr>
-		<td>Plaintiff<br/>(ALL CAPS)</td>
-		<td><input type ="text" name="plaintiff" value="{if isset($smarty.post.plaintiff)}{$smarty.post.plaintiff}{/if}">
-		<div class="errorMsg">{$obj->mErrorMessage.plaintiff}</div></td>
-	</tr>
-	<tr>
-		<td>Plaintiff (abbrev.)<br/>(Master Case List)</td>
-		<td><input type ="text" name="plaintiff_ab" value="{if isset($smarty.post.plaintiff_ab)}{$smarty.post.plaintiff_ab}{/if}">
-		<div class="errorMsg">{$obj->mErrorMessage.plaintiff_ab}</div></td>
-	</tr>
-	<tr>
-		<td>Defendant<br/>(ALL CAPS)</td>
-		<td><input type ="text" name="defendant" value="{if isset($smarty.post.defendant)}{$smarty.post.defendant}{/if}">
-		<div class="errorMsg">{$obj->mErrorMessage.defendant}</div></td>
-	</tr>
-	<tr>
-		<td>Defendant (abbrev.)<br/>(Master Case List)</td>
-		<td><input type ="text" name="defendant_ab" value="{if isset($smarty.post.defendant_ab)}{$smarty.post.defendant_ab}{/if}">
-		<div class="errorMsg">{$obj->mErrorMessage.defendant_ab}</div></td>
-	</tr>
-	<tr>
-		<td>Client<br/>(ALL CAPS)</td>
-		<td><input type ="text" name="client" value="{if isset($smarty.post.client)}{$smarty.post.client}{/if}">
-		<div class="errorMsg">{$obj->mErrorMessage.client}</div></td>
-	</tr>
-	<tr>
-		<td>IndexNo</td>
-		<td><input type ="text" name="indexNo" value="{if isset($smarty.post.indexNo)}{$smarty.post.indexNo}{/if}">
-		<div class="errorMsg">{$obj->mErrorMessage.indexNo}</div></td>
-	</tr>
-	<tr>
-		<td>ClaimNo</td>
-		<td><input type ="text" name="claimNo" id="claimNo" value="{if isset($smarty.post.claimNo)}{$smarty.post.claimNo}{/if}">
-		<div class="errorMsg">{$obj->mErrorMessage.claimNo}</div></td>
-	</tr>
-	 <tr>
-    <td>Date of Accident</td>
-    <td><input type ="text" name="dateAccident" value="{if isset($smarty.post.dateAccident)}{$smarty.post.dateAccident}{/if}">
-    <div class="errorMsg">{$obj->mErrorMessage.dateAccident}</div></td>
-  </tr>
-  <tr>
-    <td>Policy Limit</td>
-    <td><input type ="text" name="policyLimit" id="policyLimit" value="{if isset($smarty.post.policyLimit)}{$smarty.post.policyLimit}{/if}">
-    <div class="errorMsg">{$obj->mErrorMessage.policyLimit}</div></td>
-  </tr>
-    <tr>
-    <td>ExaminerID</td>
-    <td><select name="examinerID">
+	<fieldset>
+    <legend>Case Information</legend>
+    <div>
+    <label for="Case Name">Case Name</label>
+    <input type ="text" name="caseName" value="{if isset($smarty.post.caseName)}{$smarty.post.caseName}{/if}">
+    <span class="errorMsg">{$obj->mErrorMessage.caseName}</span></div>
+	<div>
+		<label for="Plaintiff(s)">Plaintiff(s)</label>
+		<input type ="text" name="plaintiff" id="plaintiff" value="{if isset($smarty.post.plaintiff)}{$smarty.post.plaintiff}{/if}">
+		<span class="errorMsg">{$obj->mErrorMessage.plaintiff}</span>
+		<span id="tip-plaintiff-docheading" class="hints">All upper case as in document heading</span></div>
+	<div>
+		<label for="Plaintiff (Case List)">Plaintiff(s)<br/>(Case List)</label>
+		<input type ="text" name="plaintiff_ab" id="plaintiff_ab" value="{if isset($smarty.post.plaintiff_ab)}{$smarty.post.plaintiff_ab}{/if}">
+		<span class="errorMsg">{$obj->mErrorMessage.plaintiff_ab}</span>
+		<span id="tip-plaintiff-list" class="hints">ex. Last Name, First Name, et al</span></div>	
+	<div>
+		<label for="Defendant(s)">Defendant(s)</label>
+		<input type ="text" name="defendant" id="defendant" value="{if isset($smarty.post.defendant)}{$smarty.post.defendant}{/if}">
+		<span class="errorMsg">{$obj->mErrorMessage.defendant}</span>
+		<span id="tip-defendant-docheading" class="hints">All upper case as in document heading</span></div>
+	<div>
+		<label for="Defendant (Case List)">Defendant(s)<br/>(Case List)</label>
+		<input type ="text" name="defendant_ab" id="defendant_ab" value="{if isset($smarty.post.defendant_ab)}{$smarty.post.defendant_ab}{/if}">
+		<span class="errorMsg">{$obj->mErrorMessage.defendant_ab}</span>
+		<span id="tip-defendant-list" class="hints">ex. Last Name, First Name, et al</span></div>
+	<div>
+		<label for="Client(s)">Client(s)</label>
+		<input type ="text" name="client" id="client" value="{if isset($smarty.post.client)}{$smarty.post.client}{/if}">
+		<span class="errorMsg">{$obj->mErrorMessage.client}</span>
+		<span id="tip-client" class="hints">Defendant(s) represented by this office.  Upper case</span></div>
+	<div>
+		<label for="Index No">Index No</label>
+		<input type ="text" name="indexNo" value="{if isset($smarty.post.indexNo)}{$smarty.post.indexNo}{/if}">
+		<span class="errorMsg">{$obj->mErrorMessage.indexNo}</span></div>
+	<div>
+		<label for="Claim No">Claim No</label>
+		<input type ="text" name="claimNo" id="claimNo" value="{if isset($smarty.post.claimNo)}{$smarty.post.claimNo}{/if}">
+		<span class="errorMsg">{$obj->mErrorMessage.claimNo}</span></div>
+	 <div>
+    <label for="Date of Accident">Date of Accident</label>
+    <input type ="text" name="dateAccident" value="{if isset($smarty.post.dateAccident)}{$smarty.post.dateAccident}{/if}">
+    <span class="errorMsg">{$obj->mErrorMessage.dateAccident}</span></div>
+  <div>
+    <label for="Policy Limit">Policy Limit</label>
+    <input type ="text" name="policyLimit" id="policyLimit" value="{if isset($smarty.post.policyLimit)}{$smarty.post.policyLimit}{/if}">
+    <span class="errorMsg">{$obj->mErrorMessage.policyLimit}</span></div>
+  <div>
+    <label for="Examiner ID">Examiner ID</label>
+    <select name="examinerID">
     <option value=""></option>
     {section name=i loop=$obj->mExaminerID}  
     <option value="{$obj->mExaminerID[i].ID}" {if isset($smarty.post.examinerID) && ($obj->mExaminerID[i].ID==$smarty.post.examinerID)}selected{/if}>{$obj->mExaminerID[i].ID}</option>
     {/section}
   </select>
-  <div class="errorMsg">{$obj->mErrorMessage.examinerID}</div></td>
-  </tr>
-    <tr>
-    <td>CaseName</td>
-    <td><input type ="text" name="caseName" value="{if isset($smarty.post.caseName)}{$smarty.post.caseName}{/if}">
-    <div class="errorMsg">{$obj->mErrorMessage.caseName}</div></td>
-  </tr>
-	<tr>
-		<td></td>
-		<td><input type="submit"  name="submit" value="Save"></td>
-	</tr>
-	</table>	
+  <span class="errorMsg">{$obj->mErrorMessage.examinerID}</span></div>    
+	<div>
+		<label>&nbsp;</label>
+		<input type="submit"  name="submit" value="Save"></div>
+	</fieldset>	
 	</form>
 </div>
 {* End caseinfo add box *}
