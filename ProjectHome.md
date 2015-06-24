@@ -1,0 +1,1 @@
+This practical PHP and MySQL tutorial will teach you how to succuessfully design and build fully featured e-commerce web sites.
